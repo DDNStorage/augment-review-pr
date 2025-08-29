@@ -47,7 +47,7 @@ runs:
         CUSTOM_GUIDELINES: ${{ inputs.custom_guidelines }}
 
     - name: Run Augment Agent
-      uses: augmentcode/augment-agent@v0
+      uses: DDNStorage/augment-agent@main
       with:
         augment_session_auth: ${{ inputs.augment_session_auth }}
         github_token: ${{ inputs.github_token }}

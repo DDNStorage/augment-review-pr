@@ -9,6 +9,9 @@ inputs:
   github_token:
     description: "GitHub token for API access. Must have 'repo' scope."
     required: true
+  github_api_url:
+    description: "GitHub API url to use if you're using github enterprise server."
+    required: false
   pull_number:
     description: "The number of the pull request being reviewed"
     required: true
@@ -51,6 +54,7 @@ runs:
       with:
         augment_session_auth: ${{ inputs.augment_session_auth }}
         github_token: ${{ inputs.github_token }}
+        github_api_url: ${{ inputs.github_api_url }}
         template_directory: "${{ github.action_path }}/templates"
         pull_number: ${{ inputs.pull_number }}
         repo_name: ${{ inputs.repo_name }}
